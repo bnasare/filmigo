@@ -3,6 +3,18 @@ const inactiveElements = document.querySelectorAll('#inactive');
 const toasts = document.getElementById('toasts');
 const imgs = document.getElementById('imgs');
 const img = document.querySelectorAll('#imgs img');
+const dropdown = document.getElementById('menuBtn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropdown.addEventListener('click', () => {
+    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+})
+
+document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target) && !dropdownContent.contains(event.target)) {
+        dropdownContent.style.display = 'none';
+    }
+});
 
 inactiveElements.forEach(inactive => {
     inactive.addEventListener('click', createNotification);
