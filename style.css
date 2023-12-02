@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav {
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+    background-color: #fff;
+}
+
+.nav.active a {
+    color: #000;
+}
+
+.nav.active .container {
+    padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.nav_list {
+    list-style-type: none;
+}
+
+@media (max-width: 700px) {
+    .nav_list ul .bigScreen {
+        display: none;
+    }
+}
+
+@media (min-width: 701px) {
+    .nav_list ul .smallScreen {
+        display: none;
+    }
+}
+
+#toasts {
+    display: flex;
+    position: fixed;
+    top: 30px;
+    font-size: small;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    z-index: 2000;
+}
+
+
+#toasts i {
+    margin-right: 5px;
+}
+
+.toast {
+    color: black;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.menu {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown:hover {
+    transform: scale(0.95);
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.image-container {
+    width: 600%;
+    height: 80vh;
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.7s ease-in-out;
+}
+
+.img-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+.img-wrapper::after {
+    content: "Hello";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 700px) {
+    img {
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .image-container {
+        height: 50vh;
+    }
+}
+
+.text-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .text-wrapper {
+        top: 20%;
+    }
+}
+
+.image-text {
+    margin: 0;
+    font-size: 60px;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .image-text {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <h1 class="logo"><a href="/index.html">Filmigo</a></h1>
+            <span class="nav_list">
+                <ul>
+                    <li class="bigScreen"><a href="#" class="current">Home</a></li>
+                    <li class="bigScreen"><a href="#" id="inactive">Genres</a></li>
+                    <li class="bigScreen"><a href="#" id="inactive">Recommendations</a></li>
+                    <li class="bigScreen"><a href="#" id="inactive">Profile</a></li>
+                    <li class="smallScreen dropdown">
+                        <button id="menuBtn" class="dropbtn">
+                            <i class="fa fa-bars menu" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" class="current">Home</a>
+                            <a href="#" id="inactive">Genres</a>
+                            <a href="#" id="inactive">Recommendations</a>
+                            <a href="#" id="inactive">Profile</a>
+                        </div>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+    <div class="carousel">
+        <div class="image-container" id="imgs">
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-vector/online-cinema-concept-with-human-hand-holding-smartphone-with-application-watching-movie-internet_107791-4997.jpg?w=2000&t=st=1701484515~exp=1701485115~hmac=c7bdf9ed0355feb3efc5b6cd40a88509ad37a38090a63102ea85361b08ab2b29"
+                    alt="first-image">
+            </div>
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-vector/online-cinema-realistic-poster-with-play-button-screen-popcorn-3d-glasses-dark-blue-background-vector-illustration_1284-77062.jpg?w=1380&t=st=1701484618~exp=1701485218~hmac=6ef7aa98daff035ba1f32021f6eb36b503924f59a6ed49a8478221588624f102"
+                    alt="second-image">
+            </div>
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-photo/top-view-arrangement-movie-elements_23-2148416808.jpg?w=2000&t=st=1701484417~exp=1701485017~hmac=5fc16169df19cc88ef27b28271ae98ae3db51469a79058195f9e0c85bbefc3ec"
+                    alt="third-image">
+            </div>
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-vector/seamless-pattern-with-cinema-elements_225004-1154.jpg?w=1480&t=st=1701477723~exp=1701478323~hmac=221492a350cb73536517cd7f1f87a728b14ff5c696cb6aae92e553fda97299fe"
+                    alt="fourth-image">
+            </div>
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-psd/lying-down-watching-movies-home-3d-illustration_1419-2560.jpg?w=1380&t=st=1701487789~exp=1701488389~hmac=f0816f8ee37337744c7b1cf31d5d21d27f7945eddef1bd5175385d1ad0ec9830"
+                    alt="fifth-image">
+            </div>
+            <div class="img-wrapper">
+                <img src="https://img.freepik.com/free-vector/cinema-flat-composition-with-popcorn-tickets-3d-glasses-people-watching-film-online_1284-55306.jpg?w=1380&t=st=1701484828~exp=1701485428~hmac=47bf181d835e9376410cca15a1a6ff407935ea48a667f48e12d1a77810283ebd"
+                    alt="sixth-image">
+            </div>
+        </div>
+        <div class="text-wrapper">
+            <h1 class="image-text">No. 1 Online Cinema®</h1>
+        </div>
+    </div>
+
+    <div id="toasts"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
