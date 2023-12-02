@@ -8,13 +8,20 @@ const dropdownContent = document.querySelector('.dropdown-content');
 
 dropdown.addEventListener('click', () => {
     dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
-})
+});
 
 document.addEventListener('click', (event) => {
     if (!dropdown.contains(event.target) && !dropdownContent.contains(event.target)) {
         dropdownContent.style.display = 'none';
     }
 });
+
+document.querySelectorAll('.dropdown-content a').forEach((option) => {
+    option.addEventListener('click', () => {
+        dropdownContent.style.display = 'none';
+    });
+});
+
 
 inactiveElements.forEach(inactive => {
     inactive.addEventListener('click', createNotification);
