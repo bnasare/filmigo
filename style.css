@@ -268,7 +268,7 @@ img {
 @media (max-width: 700px) {
     .image-text {
         font-size: 35px;
-        line-height: 18px;
+        line-height: 40px;
         text-align: center;
     }
 }
