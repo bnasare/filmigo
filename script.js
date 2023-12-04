@@ -1,3 +1,4 @@
+// Selecting DOM elements
 const navbar = document.querySelector('.nav');
 const inactiveElements = document.querySelectorAll('#inactive');
 const toasts = document.getElementById('toasts');
@@ -6,6 +7,7 @@ const img = document.querySelectorAll('#imgs img');
 const dropdown = document.getElementById('menuBtn');
 const dropdownContent = document.querySelector('.dropdown-content');
 
+// Dropdown menu event listeners
 dropdown.addEventListener('click', () => {
     dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
 });
@@ -16,17 +18,19 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Close dropdown when an option is clicked
 document.querySelectorAll('.dropdown-content a').forEach((option) => {
     option.addEventListener('click', () => {
         dropdownContent.style.display = 'none';
     });
 });
 
-
+// Notification event listeners
 inactiveElements.forEach(inactive => {
     inactive.addEventListener('click', createNotification);
 });
 
+// Function to create and remove notifications
 function createNotification() {
     const notif = document.createElement('div');
     notif.classList.add('toast');
@@ -44,6 +48,7 @@ function createNotification() {
     }, 1000);
 }
 
+// Navbar visibility control on scroll
 window.addEventListener('scroll', navController);
 
 function navController() {
@@ -54,11 +59,11 @@ function navController() {
     }
 }
 
+// Image slider functionality
 const nav_list = document.querySelector('.nav__list');
 const toast = document.querySelector('.toast');
 
 let idx = 0;
-
 let interval = setInterval(run, 3000);
 
 function run() {
@@ -76,19 +81,20 @@ function changeImage() {
     imgs.style.transform = `translateX(${-idx * 16.667}%)`;
 }
 
+// Movie API configuration
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=bc5f14f026b71687afbff6cc7bad4d4b&page=2';
-
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-
 const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=bc5f14f026b71687afbff6cc7bad4d4b&query="';
 
+// DOM elements for movie search
 const form = document.getElementById('form');
 const search = document.getElementById('search');
-
 const main = document.getElementById('main');
 
+// Initial movie fetch
 getMovies(API_URL);
 
+// Fetch movies from API and display them
 async function getMovies(url) {
     const res = await fetch(url);
     const data = await res.json();
@@ -96,6 +102,7 @@ async function getMovies(url) {
     showMovies(data.results);
 }
 
+// Display movies in the DOM
 function showMovies(data) {
     main.innerHTML = '';
 
@@ -121,6 +128,7 @@ function showMovies(data) {
     });
 }
 
+// Determine the class based on the movie rating
 function getClassByRate(vote) {
     if (vote >= 8) {
         return 'green';
@@ -131,7 +139,7 @@ function getClassByRate(vote) {
     }
 }
 
-
+// Search form event listener
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -139,10 +147,8 @@ form.addEventListener('submit', (e) => {
 
     if (searchTerm && searchTerm !== '') {
         getMovies(SEARCH_URL + searchTerm);
-
         search.value = '';
-    }
-    else {
+    } else {
         window.location.reload();
     }
-})
+});
